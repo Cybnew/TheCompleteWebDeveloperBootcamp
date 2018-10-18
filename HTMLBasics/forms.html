@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Page</title>
+</head>
+<!-- Action- where the form send data to  -->
+<!-- method - what HTTP method the form uses get or post  -->
+<!-- forms are block level elements  -->
+<body>
+    <h1>Form Page Practice</h1>
+    <form action="http://wikipedia.com" method="get">
+        <label for="username">email</label>
+            <input id="username" type="email" placeholder="Name" required>
+        <label for="password">Password</label>
+            <input type="password" placeholder="Password" >
+        <input type="submit">
+        <label for="radio">Radio</label>
+        <input type="radio" id="radio">
+        <label for="checkbox">Checkbox</label>
+        <input type="checkbox">
+
+    </form>
+    <p>Do you prefer cats or dogs</p>
+    <form action="">
+        <label for="dogs">Dogs</label>
+        <input name="petchoice" type="radio" id="dogs" value="dog">
+        <label for="cats">cats</label>
+        <input name="petchoice" type="radio" id="cats" value="cat">
+        <button>MY PET IS</button>
+        <label for="select">Choose a color</label>
+       <!-- for select dropdowns you need option elements  -->
+        <select name="color" id="select">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        <textarea name="resume" id="resume" cols="30" rows="10"></textarea>
+    </form>
+</body>
+</html>
