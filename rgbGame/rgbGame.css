@@ -1,0 +1,17 @@
+body {
+  background-color: #232323;
+}
+.square {
+  padding-bottom: 30%;
+  float: left;
+  width: 30%;
+  background-color: green;
+  margin: 1.66%;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+#guess {
+  color: #fff;
+}
