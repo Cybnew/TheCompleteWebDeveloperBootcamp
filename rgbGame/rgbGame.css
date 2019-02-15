@@ -13,5 +13,11 @@ body {
   margin: 0 auto;
 }
 #guess {
-  color: #fff;
+  color: blue;
+}
+#changeColors {
+  color: blue;
+}
+#banner {
+  background-color: #fff;
 }

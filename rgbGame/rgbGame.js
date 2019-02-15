@@ -5,24 +5,31 @@ var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var guess = document.getElementById("guess");
 var h1 = document.querySelector("h1");
+var changeColors = document.querySelector("#changeColors");
+
+changeColors.addEventListener("click", function() {
+  game();
+});
 
 colorDisplay.textContent = pickedColor;
-
-for (var i = 0; i < squares.length; i++) {
-  squares[i].style.backgroundColor = colors[i];
-  squares[i].addEventListener("click", function() {
-    var clickedColor = this.style.backgroundColor;
-    if (clickedColor === pickedColor) {
-      guess.textContent = "Correct!";
-      changeColors(pickedColor);
-      h1.style.backgroundColor = pickedColor;
-    } else {
-      this.style.backgroundColor = "#232323";
-      guess.textContent = "Wrong";
-    }
-  });
+game();
+function game() {
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+    squares[i].addEventListener("click", function() {
+      var clickedColor = this.style.backgroundColor;
+      if (clickedColor === pickedColor) {
+        guess.textContent = "Correct!";
+        changeColors(pickedColor);
+        h1.style.backgroundColor = pickedColor;
+        changeColors.textContent = "Play Again?";
+      } else {
+        this.style.backgroundColor = "#232323";
+        guess.textContent = "Wrong";
+      }
+    });
+  }
 }
-
 var changeColors = color => {
   for (i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = color;
