@@ -8,27 +8,29 @@ var h1 = document.querySelector("h1");
 var changeColors = document.querySelector("#changeColors");
 
 changeColors.addEventListener("click", function() {
-  game();
+  colors = generateColors(6);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+  }
 });
 
 colorDisplay.textContent = pickedColor;
-game();
-function game() {
-  for (var i = 0; i < squares.length; i++) {
-    squares[i].style.backgroundColor = colors[i];
-    squares[i].addEventListener("click", function() {
-      var clickedColor = this.style.backgroundColor;
-      if (clickedColor === pickedColor) {
-        guess.textContent = "Correct!";
-        changeColors(pickedColor);
-        h1.style.backgroundColor = pickedColor;
-        changeColors.textContent = "Play Again?";
-      } else {
-        this.style.backgroundColor = "#232323";
-        guess.textContent = "Wrong";
-      }
-    });
-  }
+
+for (var i = 0; i < squares.length; i++) {
+  squares[i].style.backgroundColor = colors[i];
+  squares[i].addEventListener("click", function() {
+    var clickedColor = this.style.backgroundColor;
+    if (clickedColor === pickedColor) {
+      guess.textContent = "Correct!";
+      changeColors.textContent = "YOU WIN!";
+      h1.style.backgroundColor = pickedColor;
+    } else {
+      this.style.backgroundColor = "#232323";
+      guess.textContent = "Wrong";
+    }
+  });
 }
 var changeColors = color => {
   for (i = 0; i < squares.length; i++) {
